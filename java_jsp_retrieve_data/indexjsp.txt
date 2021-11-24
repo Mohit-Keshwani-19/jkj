@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<title>SO Example</title>
+</head>
+<body style="margin-left: 500px; margin-right: 580px;">
+
+<form id="someForm" action="" method="POST" style=" background-color:burlywood;">
+        <h3> Welcome to Happy Tappy Restaurant</h3>
+        <div style="margin: 10px; text-align: center;">
+            username <input type="text" name="uname" style="margin: 10px;" />
+        </div>
+
+        <div style="margin: 10px;">
+            password <input type="password" name="pname" style="margin: 10px;" />
+        </div>
+
+        <div style="text-align: center;">
+            <input style="margin-left: 60px; margin: 10px;" type="button" value="SignIn" name="save" onclick="askForSave() " />
+            <input type="button" value="SignUp" name="finished" onclick="askForSubmit()" /> 
+        </div>
+        
+    </form>
+<script>
+form=document.getElementById("someForm");
+function askForSave() {
+    form.action="SignIn";
+ //   form.action="http://box.sianware.com/echopost.php";
+    form.submit();
+}
+function askForSubmit() {
+    form.action="signup.jsp";
+    form.submit();
+}
+ 
+</script>
+</body>
+</html>

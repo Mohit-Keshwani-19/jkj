@@ -1,0 +1,79 @@
+package backk;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.DriverManager;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class frontt
+ */
+@WebServlet("/frontt")
+public class frontt extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public frontt() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		PrintWriter oo=response.getWriter();
+		String user=request.getParameter("uname");
+		String pass=request.getParameter("pname");
+		int i=0;
+		try
+		{
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection con=DriverManager.getConnection("jdbc:mysql://localhost:3306/java","root","Arunn123");
+			PreparedStatement ps=con.prepareStatement("insert into my(username,password) values(?,?)" );
+			ps.setString(1, user);
+			ps.setString(2, pass);
+			i=ps.executeUpdate();
+			
+				Statement stml=con.createStatement();
+				int row= stml.executeUpdate("update my set username='Arun12ka4' where password='try8'");
+				oo.println(row+"Row modified");
+				con.close();
+			
+			
+		}catch(Exception e)
+		{
+			System.out.println(e);
+		}
+		if(i>0)
+		{
+			oo.print("Data inserted successfully");
+		}
+		else
+		{
+			oo.print("data not inserted");
+		}
+		//doGet(request, response);
+	}
+
+}

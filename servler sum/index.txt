@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Unit -1 Servlet </title>
+</head>
+<body>
+<form action="AddServlet" method="get">
+1st num : <input type="text" name="num1">
+2nd num : <input type="text" name="num2">
+
+<input type="submit" value="submit">
+</form>
+</body>
+</html>

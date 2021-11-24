@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Unit -1 Servlet </title>
+</head>
+<body>
+<form action="AddServlet" method="get">
+1st num : <input type="text" name="num1">
+2nd num : <input type="text" name="num2">
+
+<input type="submit" value="submit">
+</form>
+</body>package perform;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class Perform
+ */
+@WebServlet("/perform")
+public class Perform extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String name = request.getParameter("name");
+		PrintWriter pt =response.getWriter();
+		pt.println("Hello " + name);
+		
+		
+	}
+
+}
+
+</html>

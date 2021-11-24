@@ -1,0 +1,9 @@
+package com.company;
+
+public class Netb2 {
+    public static void main(String[] args) {
+        Netb nb = new Netb();
+        nb.setName("harsh");
+        System.out.println(nb.getName());
+    }
+}

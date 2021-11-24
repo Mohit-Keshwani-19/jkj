@@ -1,0 +1,32 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>signup</title>
+</head>
+<body >
+    <h1 style="text-align: center;">Welcome to Happy Tappy Restaurant</h1>
+    <form style="background-color: cadetblue; margin-left: 535px; margin-right: 515px;" 
+         method="post" action="SignUp">
+        <div style="margin-left: 22px;margin-top: 10px;">
+            username <input style="margin-left: 18px;  margin-top: 5px;" type="text" name="uname" />
+        </div>
+
+        <div style="margin-left: 32px;margin-top: 10px;">
+            Email <input style="margin-left: 32px; margin-bottom: 5px; margin-top: 5px;" type="email" name="umail " />
+        </div>
+        <div style="margin-left: 22px;margin-top: 10px;">
+            password <input style="margin-left: 20px;  margin-top: 5px;" type="text" name="upswd" />
+        </div>
+        <div style="margin-left: 12px;margin-top: 10px;">
+            Re-password <input style="margin-left: 5px; margin-bottom: 5px; margin-top: 5px;" type="text" name="urepswd" />
+        </div>
+        <div style="margin-left: 12px;margin-top: 10px;">
+            <input style="margin-left: 140px; margin-bottom: 5px;" type="submit" value="Register" />
+        </div>
+
+    </form>
+</body>
+</html>
