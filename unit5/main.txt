@@ -1,0 +1,16 @@
+package perform;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext; 
+
+public class MainFile {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		ApplicationContext context = new ClassPathXmlApplicationContext("Bean.xml");
+		
+		HelloWorld abc = (HelloWorld) context.getBean("hello");
+		abc.methord();
+	}
+}

@@ -1,0 +1,8 @@
+package perform;
+
+public class HelloWorld {
+
+	public void methord() {
+		System.out.println("Hello World"); 
+	}
+}
